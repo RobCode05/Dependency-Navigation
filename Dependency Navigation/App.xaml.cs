@@ -22,7 +22,7 @@ namespace Dependency_Navigation
             services.AddTransient<MainViewModel>();
             services.AddTransient<HomeViewModel>();
             services.AddTransient<InvoiceViewModel>();
-            services.AddTransient<INavigationService,  NavigationService>();
+            services.AddSingleton<INavigationService,  NavigationService>();
 
             services.AddSingleton<Func<Type, ViewModels>>(serviceProvider => viewModelType
             => (ViewModels)serviceProvider.GetRequiredService(viewModelType));
